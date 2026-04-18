@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-[url('./navbar.jpg')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-[#00000080] w-full max-w-250 h-auto lg:h-80 border rounded-3xl mx-auto mt-7.5">
+    <div className="flex flex-col lg:flex-row items-center bg-cover bg-center bg-no-repeat bg-blend-multiply bg-[#00000080] w-full max-w-250 h-auto lg:h-80 border rounded-3xl mx-auto mt-7.5" style={{backgroundImage: `url('./navbar.jpg')`}}>
 
       <div className="flex flex-col justify-center items-center text-center w-full lg:w-158.75 h-auto lg:h-40 gap-3 lg:gap-4 mx-auto px-4 lg:px-0 py-6 lg:py-0">
 

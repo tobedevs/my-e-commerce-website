@@ -90,7 +90,7 @@ export function Navbar() {
           </button>
 
         </div>
-        <button onClick={HandleButtonClicked} className="absolute right-5 flex cursor-pointer">
+        <button onClick={HandleButtonClicked} className="absolute right-5 top-10 flex cursor-pointer">
           <img src="./Logout.svg" alt="" />
           <p className="text-[#BB271A]">Log Out</p>
         </button>
