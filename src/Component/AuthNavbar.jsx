@@ -6,7 +6,7 @@ export default function AuthNavbar() {
     <>
     <nav className="flex justify-between items-center w-full lg:w-screen h-16 sm:h-20 border border-[#F5F5F5] sticky top-0 z-10 bg-white px-4 sm:px-32">
 
-        <Link to="/homepage"><img src="/my-e-commerce-website/shop.jpg" alt="" className="transform scale-[2] w-8 sm:w-10 h-8 sm:h-10" /></Link>
+        <Link to="/"><img src="/my-e-commerce-website\shop.jpg" alt="" className="transform scale-[2] w-8 sm:w-10 h-8 sm:h-10" /></Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
 
