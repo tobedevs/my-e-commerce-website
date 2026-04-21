@@ -1,16 +1,39 @@
 import { SideBar } from "./SideBar"
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react"
-import { useMockData } from "../AppContext/UseMockData";
 import { useCart } from "../AppContext/CartContext";
+import { useAuth } from "../AppContext/AuthContext";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 export function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false);
-  const { mockdata } = useMockData();
   const openSidebar = () => setShowSidebar(true);
   const scrollPositionRef = useRef(0);
   const { cart, totalUniqueItems } = useCart();
+  const { logout } = useAuth()
+  const navigate = useNavigate();
+
+    async function HandleButtonClicked(e) {
+    e.preventDefault();
+    const confirmLogout = window.confirm("Are you sure you want to log out of this account?");
+    if (!confirmLogout) {
+      return;
+    }else {
+      try {
+      await logout()
+      toast.success("You have successfully logged out of your account")
+      setTimeout(() => {
+        navigate('/')
+      }, 500);
+    } catch (error) {
+      toast.error("Unable to logout due to:" + error)
+    }
+    }
+
+    
+  }
 
   useEffect(() => {
     if (showSidebar) {
@@ -50,7 +73,7 @@ export function Navbar() {
     <>
       <nav className="flex justify-between items-center w-full lg:w-screen h-16 sm:h-20 border border-[#F5F5F5] sticky top-0 z-10 bg-white px-4 sm:px-32">
 
-        <Link to="/"><img src="./mockdata/shop.jpg" alt="" className="transform scale-[2] w-8 sm:w-10 h-8 sm:h-10" /></Link>
+        <Link to="/homepage"><img src="./mockdata/shop.jpg" alt="" className="transform scale-[2] w-8 sm:w-10 h-8 sm:h-10" /></Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
 
@@ -71,6 +94,10 @@ export function Navbar() {
           </button>
 
         </div>
+        <button onClick={HandleButtonClicked} className="absolute right-5 sm:top-6.25 top-10 flex cursor-pointer">
+          <img src="./Logout.svg" alt="" />
+          <p className="text-[#BB271A]">Log Out</p>
+        </button>
 
       </nav>
 
