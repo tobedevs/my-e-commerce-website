@@ -49,7 +49,7 @@ export function Main() {
   };
 
   useEffect(() => {
-    fetch('./products.json')
+    fetch('/my-e-commerce-website/products.json')
       .then((res) => res.json())
       .then((data) => {
         setItems(data);

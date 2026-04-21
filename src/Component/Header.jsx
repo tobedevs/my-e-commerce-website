@@ -17,7 +17,7 @@ export function Header() {
             placeholder="Find products"
           />
           <img
-            src="./MagnifyingGlass.svg"
+            src="/my-e-commerce-website/MagnifyingGlass.svg"
             alt=""
             className="cursor-pointer w-4 h-4 sm:w-5 sm:h-5 absolute top-1/2 transform -translate-y-1/2 left-2.5"
           />
