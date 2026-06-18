@@ -2,12 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-export default defineConfig({
-  base: '/my-e-commerce-website/', 
-  plugins: [
-    react(),
-    tailwindcss(),
+export default defineConfig( {
+    base: '/my-e-commerce-website/', 
+    plugins: [
+      react(),
+      tailwindcss(),
   ],
-  
 });
 
